@@ -1,0 +1,28 @@
+body {
+  font-family: "Goudy Old Style",Garamond,"Big Caslon","Times New Roman",serif;
+  background-image: url('seigaiha.png');
+}
+
+.well {
+  height: 650px
+}
+
+$primary-color: orange;
+
+h1{ 
+  background-color: $primary-color;
+}
+
+h2{
+  color: $primary-color;
+}
+
+  h2 a:hover{
+    color: $primary-color;
+  }
+
+  h2 span {
+    background-color: #000;
+}
+
+
