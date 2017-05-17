@@ -1,11 +1,23 @@
 class RecipesController < ApplicationController
-  def one_recipe_action
-    @recipe = Recipe.first
-    render 'one_recipe_view.html.erb' 
-  end
+  # def one_recipe_action
+  #   @recipe = Recipe.first
+  #   render 'one_recipe_view.html.erb' 
+  # end
 
   def index
+    if session[:count] == nil
+      session[:count] = 0
+    end
+
+    session[:count] += 1
+    @visit_count = session[:count]
+
+
     @recipes = Recipe.all
+    sort_attribute = params[:sort]
+      if sort_attribute
+        @recipes = Recipe.all.order(sort_attribute)
+      end
   end
 
   def show
